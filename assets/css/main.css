@@ -2,12 +2,20 @@
     --bg-color: #f5f5f5;
     --text-color: #6c757d;
     --accent-color: #ffd333;
-    --contract-color: #3d464d;
-    --grey-color: #ccc;
+    --contrast-color: #3d464d;
+    --gray-color: #ccc;
 }
 
-html, body {
+html,
+body {
     height: 100%;
+}
+
+body {
+    min-width: 320px;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 a {
@@ -16,7 +24,6 @@ a {
 }
 
 a:hover {
-    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -27,8 +34,7 @@ img {
 
 .btn,
 .dropdown-menu,
-.form-control
-{
+.form-control {
     border-radius: 0;
 }
 
@@ -39,51 +45,43 @@ img {
 }
 
 .form-control::placeholder {
-    color: var(--grey-color);
+    color: var(--gray-color);
 }
 
 .btn-warning {
     background-color: var(--accent-color);
-    color: var(--contract-color);
+    color: var(--contrast-color);
 }
 
-.btn-outline-warning
-{
+.btn-outline-warning {
     border-color: var(--accent-color);
 }
 
-.btn-warning {
+.bg-warning {
     background-color: var(--accent-color) !important;
-} 
+}
 
 .btn-outline-warning:hover {
     background-color: var(--accent-color);
-    color: var(--contract-color);
+    color: var(--contrast-color);
 }
 
-/* ++++++++++++++++ Ganeral+++++++++++++++++++++++ */
-body {
-    min-width: 320px;
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
+/* ============================= General rules ============================ */
 .wrapper {
     min-height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.main {
+main.main {
     flex: 1 1 auto;
 }
-/* ++++++++++++++++ Ganeral End +++++++++++++++++++++++ */
 
+/* ============================= General rules ============================ */
 
-/* ++++++++++++++++ Header Start+++++++++++++++++++++++ */
+/* ============================= Header rules ============================ */
 
-.header-top-phone a{
+.header-top-phone a {
     text-decoration: none;
 }
 
@@ -95,18 +93,15 @@ ul.social-icons {
     list-style: none;
     margin-bottom: 0;
     padding: 0;
-    
 }
 
 ul.social-icons li {
     margin-right: 10px;
-
 }
 
 ul.social-icons a {
-    
     background-color: var(--accent-color);
-    color: var(--contract-color);
+    color: var(--contrast-color);
     width: 30px;
     height: 30px;
     line-height: 30px;
@@ -117,10 +112,8 @@ ul.social-icons a {
 }
 
 ul.social-icons a:hover {
-
-    background-color: var(--contract-color);
+    background-color: var(--contrast-color);
     color: var(--accent-color);
-   
 }
 
 .header-top .btn {
@@ -133,16 +126,68 @@ ul.social-icons a:hover {
     color: var(--accent-color);
     transition: all .3s;
 }
+
 .header-logo:hover {
-    color: var(--contract-color);
+    color: var(--contrast-color);
 }
 
 .cart-buttons .btn {
-    color: var(--contract-color);
+    color: var(--contrast-color);
     transition: all .3s;
 }
 
 .cart-buttons .btn:hover {
-    border: 1px solid var(--contract-color);
+    border: 1px solid var(--contrast-color);
 }
-/* ++++++++++++++++ Header End +++++++++++++++++++++++ */
+
+.header-bottom {
+    border-top: 3px solid var(--accent-color);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .3);
+}
+
+.header-bottom .navbar,
+.header-bottom .navbar .dropdown-menu {
+    background-color: var(--contrast-color) !important;
+}
+
+.header-bottom .nav-item:first-child .nav-link {
+    padding-left: 0;
+}
+
+.header-bottom .navbar .nav-link {
+    color: #fff;
+    transition: .3s all;
+    letter-spacing: .1rem;
+}
+
+.header-bottom .navbar .nav-link:hover {
+    color: var(--accent-color);
+}
+
+.header-bottom .navbar .nav-link.active {
+    color: var(--accent-color);
+}
+
+.header-bottom .navbar .dropdown-menu {
+    margin-top: 7px;
+}
+
+/* ============================= Header rules ============================ */
+
+
+@media only screen and (min-width : 992px) {
+    .header-bottom .navbar .dropdown-menu-end {
+        margin-left: 0;
+        border: 0;
+    }
+
+    .header-bottom .navbar .nav-link {
+        padding: 1rem;
+    }
+}
+
+@media only screen and (max-width : 992px) {
+    .header-bottom .navbar .dropdown-menu {
+        padding-left: 1rem;
+    }
+}
